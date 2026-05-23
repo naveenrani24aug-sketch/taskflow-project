@@ -1,11 +1,9 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string>("");
-  const navigate = useNavigate();
 
   const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -17,7 +15,7 @@ function LoginPage() {
 
     if (username === "admin" && password === "admin123") {
       localStorage.setItem("isLoggedIn", "true");
-      navigate("/");
+      window.location.href = "/";
     } else {
       setError("Invalid username or password.");
     }
