@@ -1,73 +1,54 @@
-# React + TypeScript + Vite
+# TaskFlow - Full Stack Task Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack task management application built with React, TypeScript, Express, and MongoDB.
 
-Currently, two official plugins are available:
+## Group Information
+- **Group No:** 2
+- **Section:** BSCS 6A
+- **Members:**
+  - Naveenta (2312124) - Frontend
+  - Kashish Hotwani (2312118) - Backend
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Technologies Used
+- **Frontend:** React, TypeScript, Vite, React Router, Axios
+- **Backend:** Node.js, Express, TypeScript, Mongoose
+- **Database:** MongoDB Atlas
 
-## React Compiler
+## Features
+- List all tasks
+- Create new task
+- Delete task
+- Edit task (Bonus)
+- Search tasks by title and description (Group 2 - Product Feature)
+- Empty state design (Group 2 - Engineering Feature)
+- Login page (Bonus +3)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## How to Install and Run
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Backend
+```bash
+cd backend
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Frontend
+```bash
+cd frontend
+npm install
+npm run dev
 ```
+
+## Environment Variables
+Create a `.env` file in the `backend` folder:
+
+## API Routes
+- GET /tasks - Get all tasks
+- GET /tasks?search=keyword - Search tasks
+- POST /tasks - Create task
+- DELETE /tasks/:id - Delete task
+- PUT /tasks/:id - Update task
+
+## MongoDB Setup
+- Database hosted on MongoDB Atlas
+- Connection string required in .env file
