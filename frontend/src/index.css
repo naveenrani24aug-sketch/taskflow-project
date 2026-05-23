@@ -1,0 +1,198 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fff7f3;
+  color: #333;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffbfa3;
+  padding: 15px 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header h1 {
+  font-size: 24px;
+}
+
+.logo-placeholder {
+  width: 40px;
+  height: 40px;
+  background: #ff9e7a;
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.navbar {
+  display: flex;
+  gap: 20px;
+  background: #ffd6c2;
+  padding: 10px 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  color: #ff9e7a;
+}
+
+.main {
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #ffc4a8;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card h2 {
+  margin-bottom: 16px;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #ffd6c2;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.meta {
+  font-size: 12px;
+  color: gray;
+  margin-top: 4px;
+}
+
+.input {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 8px;
+  border: 1px solid #ffc4a8;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.btn {
+  background: #ff9e7a;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.btn:hover {
+  background: #ff8560;
+}
+
+.btn:disabled {
+  background: #ffcab0;
+  cursor: not-allowed;
+}
+
+.delete {
+  background: #ffe3d5;
+  color: #333;
+  border: 1px solid #ffbfa3;
+  white-space: nowrap;
+}
+
+.delete:hover {
+  background: #ffd6c2;
+}
+
+.edit {
+  background: #ffd6c2;
+  color: #333;
+  border: 1px solid #ffbfa3;
+}
+
+.edit:hover {
+  background: #ffbfa3;
+}
+
+.task-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.loading {
+  color: #ff9e7a;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: gray;
+}
+
+.empty-state p {
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.search-bar {
+  margin-bottom: 16px;
+}
+
+@media (max-width: 600px) {
+  .task {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .header h1 {
+    font-size: 18px;
+  }
+
+  .card {
+    padding: 14px;
+  }
+}
