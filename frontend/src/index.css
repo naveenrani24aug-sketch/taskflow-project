@@ -196,3 +196,41 @@ label {
     padding: 14px;
   }
 }
+
+
+/* LOGIN PAGE */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #fff7f3;
+}
+
+.login-card {
+  background: white;
+  border: 1px solid #ffc4a8;
+  padding: 30px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.login-card h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.login-hint {
+  margin-top: 16px;
+  font-size: 12px;
+  color: gray;
+  text-align: center;
+}

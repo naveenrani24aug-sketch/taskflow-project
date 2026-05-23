@@ -1,13 +1,16 @@
 import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import type { Task } from "./types/task";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import TaskListPage from "./pages/TaskListPage";
 import CreateTaskPage from "./pages/CreateTaskPage";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   const [editingTask, setEditingTask] = useState<Task | null>(null);
+
+  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
   const handleSetEditingTask = (task: Task | null) => {
     setEditingTask(task);
@@ -15,25 +18,39 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header />
-      <Navbar />
       <Routes>
+        <Route path="/login" element={<LoginPage />} />
         <Route
-          path="/"
+          path="/*"
           element={
-            <TaskListPage
-              editingTask={editingTask}
-              setEditingTask={handleSetEditingTask}
-            />
-          }
-        />
-        <Route
-          path="/create"
-          element={
-            <CreateTaskPage
-              editingTask={editingTask}
-              setEditingTask={handleSetEditingTask}
-            />
+            isLoggedIn ? (
+              <>
+                <Header />
+                <Navbar />
+                <Routes>
+                  <Route
+                    path="/"
+                    element={
+                      <TaskListPage
+                        editingTask={editingTask}
+                        setEditingTask={handleSetEditingTask}
+                      />
+                    }
+                  />
+                  <Route
+                    path="/create"
+                    element={
+                      <CreateTaskPage
+                        editingTask={editingTask}
+                        setEditingTask={handleSetEditingTask}
+                      />
+                    }
+                  />
+                </Routes>
+              </>
+            ) : (
+              <Navigate to="/login" />
+            )
           }
         />
       </Routes>
